@@ -2,9 +2,9 @@
 
 ## Description
 
-​	This repository incorporates the artifact involved in the manuscript '*A Hybrid Test Oracle for Quantum Programs with Separable Output States*'. 
+This repository incorporates the artifact involved in the manuscript '*A Hybrid Test Oracle for Quantum Programs with Separable Output States*'. 
 
-​	More details will be updated if the manuscript is possibly accepted for publication. 
+More details will be updated if the manuscript is possibly accepted for publication. 
 
 ## Environment
 
@@ -37,9 +37,9 @@ tqdm==4.66.1
 
 ### Test Suites
 
-​	All the involved test suites are zipped into `test_suites.zip`. In this zip, the test suites for each quantum program are presented in a sperate file entitled with the corresponding program name. More specifically, `RQs1and2` and `RQ3` respectively refer to test suites used for RQs1~2 and RQ3.
+All the involved test suites are zipped into `test_suites.zip`. In this zip, the test suites for each quantum program are presented in a sperate file entitled with the corresponding program name. More specifically, `RQs1and2` and `RQ3` respectively refer to test suites used for RQs1~2 and RQ3.
 
-​	The concrete data is stored in `aaa_vbbb_testSuites_(qubit=ccc,fr=50,#=50).csv`, where
+The concrete data is stored in `aaa_vbbb_testSuites_(qubit=ccc,fr=50,#=50).csv`, where
 
 + `aaa` $\in$ {`LPR`, `LAF`, `DO`, `QFT`, `IC`, `WA`};
 + `bbb` $\in$ {`1`, `2`, `3`, `4`, `5`} for RQs1~2 and `bbb` $\in$ {`1`} for RQ3;
@@ -49,7 +49,7 @@ Moreover, the rightmost column `if_pass` indicates the ground truth and the othe
 
 ### Experimental Results
 
-​	As is stated in the manuscript, only partial representative results and preprocessed data are exhibited, due to limited space. Instead, this repository provides full results and raw data with the zip named `experimental_data.zip`. There are descriptions for the involved files, where all the files named `figures` include the experimental plots in a PDF form and the files `raw_data` offer tables of detailed data.
+As is stated in the manuscript, only partial representative results and preprocessed data are exhibited, due to limited space. Instead, this repository provides full results and raw data with the zip named `experimental_data.zip`. There are descriptions for the involved files, where all the files named `figures` include the experimental plots in a PDF form and the files `raw_data` offer tables of detailed data.
 
 + `case_study`: This file contain the experimental results of testing the artificial program, (i.e., data related to both **Section IV** and **Section VI. A**). The tables are named `shots=aaa_bbb.csv`, where `aaa` is the employed shots and `bbb` $\in$ \{`HOSS`, `MW Test`} is the test oracle. For each table, the qubit number (`# qubits`), average detected fault (`ave_fault`) and average run time (`ave_time`) are included.
 + `RQ1`: All the experimental results of RQ1 are in this file. The file `variable_shots` of `figures` complements the plots about variation of shots for all the 5 versions of each program. In `raw_data`, the data (i.e., shots, run time of $r$ repeats, detected faults of $r$ repeats, the mean values and standard derivation for time and faults) corresponding to each plot is presented. The tables of data are named in a form of `aaa_vbbb_RQ1_ccc`, where `aaa` $\in$ {`LPR`, `LAF`, `DO`, `QFT`, `IC`, `WA`}, `bbb` $\in$ {`1`, `2`, `3`, `4`, `5`} and `ccc` $\in$ {`Chi Squared`, `Crs Ent`, `HOSS`, `JS Div`, `KS Test`, `MW Test`}. In addition, `RQ1_processed_data.xlsx` is the data corresponding to **TABLE II** in the manuscript.
@@ -60,7 +60,7 @@ Moreover, the rightmost column `if_pass` indicates the ground truth and the othe
 
 ### Object Programs
 
-​	The files `LinearPauliRotations`, `LinearAmplitudeFunction`, `Diagonal`, `QuantumFourierTransform`, `IntegerComparator` and `WeightedAdder` correspond to 6 employed quantum programs. In each file, 
+The files `LinearPauliRotations`, `LinearAmplitudeFunction`, `Diagonal`, `QuantumFourierTransform`, `IntegerComparator` and `WeightedAdder` correspond to 6 employed quantum programs. In each file, 
 
 + `aaa.py`: The bug-free version downloaded from `qiskit.circuit.library` (https://github.com/Qiskit/qiskit/tree/stable/1.2/qiskit/circuit/library), where `aaa` refers to the name of the object program (i.e., `pauli`, `amplitude`, `diagonal`, `qft`, `comp` and `adder`).
 
@@ -125,7 +125,7 @@ Moreover, the rightmost column `if_pass` indicates the ground truth and the othe
 
 ### Data Processing
 
-​	A notebook `data_processing.ipynb` is given to reproduce all the figures and tables in **Section IV**, **Section VI. A** and **Section VI. F**.
+A notebook `data_processing.ipynb` is given to reproduce all the figures and tables in **Section IV**, **Section VI. A** and **Section VI. F**.
 
 ### Functions
 
