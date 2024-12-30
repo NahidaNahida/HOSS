@@ -41,9 +41,9 @@ tqdm==4.66.1
 
 ​	The concrete data is stored in `aaa_vbbb_testSuites_(qubit=ccc,fr=50,#=50).csv`, where
 
-+ `aaa` $\in\{\texttt{LPR, LAF, DO, QFT, IC, WA}\}$;
-+ `bbb` $\in\{\texttt{1,2,3,4,5}\}$ for RQs1~2 and `bbb` $\in\{\texttt{1}\}$ for RQ3;
-+ `ccc` $\in\{\texttt{10}\}$ for any program in RQs1~2. In the case of RQ3, `ccc` $\in\{\texttt{6,7,8,9,10,11,12}\}$ for programs excluding $\texttt{IC}$ and `ccc` $\in\{\texttt{6,8,10,12}\}$ for $\texttt{IC}$.
++ `aaa` $\in$ {`LPR`, `LAF`, `DO`, `QFT`, `IC`, `WA`};
++ `bbb` $\in$ {`1`, `2`, `3`, `4`, `5`} for RQs1~2 and `bbb` $\in$ {`1`} for RQ3;
++ `ccc` $\in$ {`10`} for any program in RQs1~2. In the case of RQ3, `ccc` $\in$ {`6`, `7`, `8`, `9`, `10`, `11`, `12`} for programs excluding `IC` and `ccc` $\in$ {`6`, `8`, `10`, `12`} for `IC`.
 
 Moreover, the rightmost column `if_pass` indicates the ground truth and the other columns refer to the test inputs.
 
@@ -51,8 +51,8 @@ Moreover, the rightmost column `if_pass` indicates the ground truth and the othe
 
 ​	As is stated in the manuscript, only partial representative results and preprocessed data are exhibited, due to limited space. Instead, this repository provides full results and raw data with the zip named `experimental_data.zip`. There are descriptions for the involved files, where all the files named `figures` include the experimental plots in a PDF form and the files `raw_data` offer tables of detailed data.
 
-+ `case_study`: This file contain the experimental results of testing the artificial program, (i.e., data related to both **Section IV** and **Section VI. A**). The tables are named `shots=aaa_bbb.csv`, where `aaa` is the employed shots and `bbb`$\in\{\texttt{HOSS},\texttt{MW Test}\}$ is the test oracle. For each table, the qubit number (`# qubits`), average detected fault (`ave_fault`) and average run time (`ave_time`) are included.
-+ `RQ1`: All the experimental results of RQ1 are in this file. The file `variable_shots` of `figures` complements the plots about variation of shots for all the 5 versions of each program. In `raw_data`, the data (i.e., shots, run time of $r$ repeats, detected faults of $r$ repeats, the mean values and standard derivation for time and faults) corresponding to each plot is presented. The tables of data are named in a form of `aaa_vbbb_RQ1_ccc`, where `aaa`$\in\{\texttt{LPR,LAF,DO,QFT,IC,WA}\}$, `bbb`$\in\{\texttt{1,2,3,4,5}\}$ and `ccc`$\in\{\texttt{Chi Squared,Crs Ent,HOSS,JS Div,KS Test,MW Test}\}$. In addition, `RQ1_processed_data.xlsx` is the data corresponding to **TABLE II** in the manuscript.
++ `case_study`: This file contain the experimental results of testing the artificial program, (i.e., data related to both **Section IV** and **Section VI. A**). The tables are named `shots=aaa_bbb.csv`, where `aaa` is the employed shots and `bbb` $\in$ \{`HOSS`, `MW Test`} is the test oracle. For each table, the qubit number (`# qubits`), average detected fault (`ave_fault`) and average run time (`ave_time`) are included.
++ `RQ1`: All the experimental results of RQ1 are in this file. The file `variable_shots` of `figures` complements the plots about variation of shots for all the 5 versions of each program. In `raw_data`, the data (i.e., shots, run time of $r$ repeats, detected faults of $r$ repeats, the mean values and standard derivation for time and faults) corresponding to each plot is presented. The tables of data are named in a form of `aaa_vbbb_RQ1_ccc`, where `aaa` $\in$ {`LPR`, `LAF`, `DO`, `QFT`, `IC`, `WA`}, `bbb` $\in$ {`1`, `2`, `3`, `4`, `5`} and `ccc` $\in$ {`Chi Squared`, `Crs Ent`, `HOSS`, `JS Div`, `KS Test`, `MW Test`}. In addition, `RQ1_processed_data.xlsx` is the data corresponding to **TABLE II** in the manuscript.
 + `RQ2`: This file refers to the data for RQ2. In `figures`, the boxplots for each program with 5, 10, 15 shots are included, which serve as supplementary materials of **Fig. 10**. `RQ2_mean_values.xlsx` shows the data in **TABLE III**, derived from the tables in `raw_data`. `RQ2_fault_statistics.xlsx` demonstrates the concrete statistics for the comparison between 2 WOOs, where $p$-values (p-value), effect sizes (es) and the magnitudes of effect sizes (mag) are included. `RQ2_counts.xlsx` is the processed from `RQ2_fault_statistics.xlsx` and corresponds to data in **TABLE IV**.
 + `RQ3`: It contains the data for RQ3. The 6 subplots of **Fig. 11** are in `figures`. `raw_data` presents the detailed data corresponding to the subplots.
 
@@ -110,12 +110,12 @@ Moreover, the rightmost column `if_pass` indicates the ground truth and the othe
   python artificial_program.py
   ```
 
-+ **Test process implementation**: Execute `aaa_running_ccc.py` to run `aaa_test_process_ccc.py` and then save the data table. Before running, it is necessary to copy the .csv files of test suites to the path where `aaa_running_ccc.py` locates. The required files are listed as follows,
++ **Test process implementation**: Execute `aaa_running_ccc.py` to run `aaa_test_process_ccc.py` and then save the data table. Before running, it is necessary to copy the `.csv` files of test suites to the path where `aaa_running_ccc.py` locates. The required files are listed as follows,
 
   + **RQ1 and RQ2**: `aaa_vbbb_testSuites_(qubit=10,fr=50,#=50).csv`, where for a tested program `aaa`, `bbb` should traverse from `1` to `5`.
-  + **RQ3**: `aaa_v1_testSuites_(qubit=ccc,fr=50,#=50).csv`, where for a tested program `aaa`, `ccc` should traverse each integer from 6 to 12 for programs except $\texttt{IC}$ while only even number from 6 to 12 for $\texttt{IC}$.
+  + **RQ3**: `aaa_v1_testSuites_(qubit=ccc,fr=50,#=50).csv`, where for a tested program `aaa`, `ccc` should traverse each integer from 6 to 12 for programs except `IC` while only even number from 6 to 12 for `IC`.
 
-  Then, taking an example of performing the RQ2 experiment of $\texttt{LPR}$, run the following code
+  Then, taking an example of performing the RQ2 experiment of `LPR`, run the following code
 
   ```
   python LinearPauliRotations/pauli_runinng_RQs1and2.py
