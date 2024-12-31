@@ -1,4 +1,4 @@
-# HOSS
+# HOSS (Hybrid Oracle via Separable States)
 
 ## Description
 
